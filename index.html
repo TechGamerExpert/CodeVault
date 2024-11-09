@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeVault</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Creepster', sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        input, button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the Code</h1>
+    <input type="text" id="codeInput" placeholder="Enter Code Here">
+    <button onclick="downloadFile()">Download</button>
+    <script>
+        function downloadFile() {
+            const code = document.getElementById('codeInput').value;
+            const validCode = ' !UDEMY ';  // Your predefined code
+            if (code === validCode) {
+                const audioUrl = 'https://techhamerexpert.github.io/CodeVault/assets/Is%20This%20a%20Image.wav';
+                const a = document.createElement('a');
+                a.href = audioUrl;
+                a.download = 'Is This a Image.wav';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                alert('Invalid code. Try again!');
+            }
+        }
+    </script>
+</body>
+</html>
